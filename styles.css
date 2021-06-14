@@ -11,8 +11,8 @@ body{
 }
 
 #grid{
-  width: 160px;
-  height: 160px;
+  width: 25rem;
+  height: 25rem;
   border-color: black;
   border-style: solid;
   display:inline-grid;
