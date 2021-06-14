@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#grid{
+  width: 160px;
+  height: 160px;
+  border-color: black;
+  border-style: solid;
+  display:inline-grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16,2fr);
+}
+#grid > div{
+  background-color: white;
+  border: 1px solid black;
+}
