@@ -1,5 +1,8 @@
 const divParent = document.querySelector("#grid");
 const Limpiar_btn = document.querySelector("#btnLimpiar");
+const numCeldas_input = document.querySelector("#numCeldas");
+const set_btn = document.querySelector("#set");
+let num = 0;
 for (let i = 0; i < 256; i++) {
   const div = document.createElement("div");
   divParent.appendChild(div).classList.add("cuadritos");
@@ -51,8 +54,26 @@ const colorHex = () => {
   }
   return color;
 };
-pintarCuadros();
 
-Limpiar_btn.addEventListener("click", function () {
-  limpiarCuadros();
+const modGrid = (num) => {
+  divParent.style["grid-template-columns"] = `repeat(${num},${100 / num}%)`;
+  divParent.style["grid-template-rows"] = `repeat(${num},${100 / num}%)`;
+};
+
+const modMatriz = (num) => {
+  let numi = num * num;
+  console.log(numi);
+  for (let i = 0; i < numi; i++) {
+    const div = document.createElement("div");
+    divParent.appendChild(div).classList.add("cuadritos");
+  }
+};
+
+pintarCuadros();
+set_btn.addEventListener("click", () => {
+  num = Number(prompt("Ingrese el número de celdas por lado que desea"));
+  modGrid(num);
+  modMatriz(num);
+  pintarCuadros();
 });
+Limpiar_btn.addEventListener("click", () => limpiarCuadros());
